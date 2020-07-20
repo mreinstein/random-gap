@@ -1,4 +1,4 @@
-import { randomInt } from './int.js'
+import randomInt from './int.js'
 
 
 const MAX_UINT32 = Math.pow( 2, 32 ) - 1
