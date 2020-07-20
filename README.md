@@ -33,7 +33,6 @@ const v = randomFloat(-0.5, 2.3)  // returns a value anywhere between -0.5 and 2
 ```
 
 
-
 # int 
 
 choose an integer within a range (bounds inclusive)
@@ -41,3 +40,13 @@ choose an integer within a range (bounds inclusive)
 ```javascript
 const v = randomInt(-7, 19)  // returns a value anywhere between -7 and 19
 ```
+
+
+# uint32
+
+choose an integer with the range of 0 to the maximum unsigned int representable with 32 bits
+
+```javascript
+const v = randomUint32()
+```
+
