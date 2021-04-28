@@ -1,4 +1,4 @@
-import Alea from 'https://cdn.skypack.dev/alea'
+import Alea from 'https://cdn.skypack.dev/pin/alea@v1.0.0-P9lu4rchYeqab9T0CblM/mode=imports/optimized/alea.js'
 
 
 const defaultSeed = Math.random()
