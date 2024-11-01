@@ -1,0 +1,29 @@
+{
+  "name": "@footgun/random-gap",
+  "version": "0.1.0",
+  "description": "random number functions that are missing or lacking from the standard javascript library",
+  "main": "random-gap.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mreinstein/random-gap.git"
+  },
+  "keywords": [
+    "random",
+    "number",
+    "math"
+  ],
+  "author": "Michael Reinstein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mreinstein/random-gap/issues"
+  },
+  "homepage": "https://github.com/mreinstein/random-gap#readme",
+  "dependencies": {
+    "alea": "^1.0.1",
+    "wgpu-matrix": "^3.3.0"
+  }
+}
