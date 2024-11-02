@@ -45,7 +45,7 @@ const tool = Random.choose(choices, removeChoice, rngFn)
 ```
 
 
-# float
+## float
 
 Choose a float within a range (bounds inclusive)
 
@@ -63,7 +63,7 @@ const v = Random.float(-0.5, 2.3, rngFn)
 ```
 
 
-# int
+## int
 
 Choose an integer within a range (bounds inclusive)
 
@@ -81,7 +81,7 @@ const v = Random.int(-7, 19, rngFn)
 ```
 
 
-# uint32
+## uint32
 
 Choose an integer with the range of 0 to the maximum unsigned int representable with 32 bits
 
@@ -97,7 +97,7 @@ const v = randomUint32(rngFn)
 ```
 
 
-# point in 2D circle
+## point in 2D circle
 
 Choose an 2D point within a circle
 
@@ -114,7 +114,41 @@ console.log(out)
 ```
 
 
+## LootTable
+
+A loot drop table implementation in JavaScript.
+
+LootTable is used to make a random choice among a weighted list of alternatives for item drops,
+map generation, and many other processes. There's a good overview of loot tables on
+[Lost Garden](http://www.lostgarden.com/2014/12/loot-drop-tables.html).
+
+```javascript
+import { LootTable } from '@footgun/random-gap'
+
+
+const lt = LootTable.create()
+LootTable.add(lt, 'sword', 20)
+LootTable.add(lt, 'shield', 5)
+LootTable.add(lt, 'gold', 5)
+LootTable.add(lt, null, 1)
+const item = LootTable.choose(lt) // most likely a sword, sometimes null
+```
+
+Weights are arbitrary, not percentages, and don't need to add up to 100.
+If one item has a weight of 2 and another has a weight of 1, the first item
+is twice as likely to be chosen. If quantity is given, then calls to `choose()`
+will only return that item while some are available. Each `choose()` that
+selects that item will reduce its quantity by 1.
+
+Items can be anything, not just strings. They can be arrays, numbers, JSON
+data, null, functions... even another LootTable!
+
 You may provide an optional random number source function:
 ```javascript
 const v = randomUint32(rngFn)
 ```
+
+
+## references
+The loot table implementation is taken from https://github.com/jotson/LootTable.js
+and modified slightly to be data oriented, pure esm, with no build step.
